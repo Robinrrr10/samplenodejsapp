@@ -1,0 +1,13 @@
+body {
+  background-color: blue;
+}
+
+input {
+  color: brown;
+  border-color: green;
+}
+
+#allItems {
+  background-color: red;
+  color: yellow;
+}
