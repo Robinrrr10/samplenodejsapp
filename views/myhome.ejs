@@ -2,21 +2,25 @@
 <head>
   <title>my home page</title>
   <link href="/styles/design.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript">
+
+  </script>
 </head>
 <body>
   <h3>This is the page</h3>
   <div id="item-box-form">
-    <form class="addingform" action="index.html" method="post">
-      <input type="text" name="itm" placeholder="Add item here..." />
+    <form class="addingform" action="/add" method="post">
+      <input type="text" name="name" placeholder="Add item here..." />
       <input type="submit" value="Add" />
     </form>
   </div>
   <div id="allItems">
     <h4>All items</h4>
     <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      <% for(var i=0; i < allItems.length; i++) { %>
+      <!--<li><a href="/remove/<%= allItems[i].name %>"><%= allItems[i].name %></li>-->
+        <form action="/remove" method="post"><input type="text" name="name" value="<%= allItems[i].name %>" /><input type="submit" value="removeFromlist" /></form>
+      <% } %>
     </ul>
   </div>
 </body>
